@@ -1,5 +1,6 @@
 package interfaces;
 
+import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
@@ -110,7 +111,8 @@ public class homeConverter {
     public void pressSearchOption(AppiumDriver<MobileElement> driver, String Parametro){
         MobileElement Lupa = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.Spinner[2]/android.widget.RelativeLayout/android.widget.TextView"));
             Lupa.click();
-            driver.getKeyboard().sendKeys(Parametro+"\n");
+            driver.getKeyboard().sendKeys(Parametro);
+            driver.executeScript("mobile: performEditorAction", ImmutableMap.of("action", "search"));
     }
 
     public void pressRightMenu(AppiumDriver<MobileElement> driver){
@@ -121,6 +123,11 @@ public class homeConverter {
     public void pressLongitudOption(AppiumDriver<MobileElement> driver){
         MobileElement OpLongitud = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.ListView/android.widget.RelativeLayout[5]"));
             OpLongitud.click();
+    }
+
+    public void pressVelocidadOption(AppiumDriver<MobileElement> driver){
+        MobileElement OpVelocidad = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.ListView/android.widget.RelativeLayout[2]"));
+            OpVelocidad.click();
     }
 
 }

@@ -27,7 +27,6 @@ public class stepMOBILE {
     public void puedoIngresarALaApp() throws MalformedURLException{
         BuildApp builder = new BuildApp();
         driver = builder.setUpAppium();
-        System.out.println("Aplicacion inicada");
     }
 
     @When("busco la opcion Longitud en el menu")
@@ -56,6 +55,9 @@ public class stepMOBILE {
     @When("busco la opcion {string} en la opcion de buscar")
     public void buscoLaOpcionEnLaOpcionDeBuscar(String Param) {
         pageH.pressSearchOption(driver, Param);
+        interaction.waitTimeOf(driver, 3);
+        pageH.pressVelocidadOption(driver);
+
     }
 
     @Then("priono muchos elementos")

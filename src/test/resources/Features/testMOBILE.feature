@@ -23,8 +23,8 @@ Feature: El usuario puede generar la conversion de medidas usando la app
     Then Observo que el valor ingresado es '<Input>' y el obtenido es '<Output>'
 
     Examples:
-      | Input | Output | Parametro   |
-      | 120   | 120    | Aceleracion |
+      | Input | Output     | Parametro |
+      | 120   | 147 005.28 | velocidad |
 
   @positive
   Scenario: Intereaccion General
