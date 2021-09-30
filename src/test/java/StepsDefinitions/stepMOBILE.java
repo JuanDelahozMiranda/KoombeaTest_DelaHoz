@@ -25,8 +25,8 @@ public class stepMOBILE {
 
     @Given("puedo ingresar a la app")
     public void puedoIngresarALaApp() throws MalformedURLException{
-        //BuildApp builder = new BuildApp();
-        //driver = builder.setUpAppium();
+        BuildApp builder = new BuildApp();
+        driver = builder.setUpAppium();
         System.out.println("Aplicacion inicada");
     }
 
